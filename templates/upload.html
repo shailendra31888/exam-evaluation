@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/omr.css">
+    <script src="/static/omr.js" defer></script>
+    <title>AI-Powered OMR Sheet Evaluator</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="nav-heading">AI-Powered OMR Checker</h1>
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="side-decor left-side"></div>
+        <div class="side-decor right-side"></div>
+        <div class="content">
+            <div class="steps-container">
+                <div class="step">
+                    <div class="circle">1</div>
+                    <p>Upload OMR</p>
+                </div>
+                <div class="step">
+                    <div class="circle">2</div>
+                    <p>Provide Answers</p>
+                </div>
+                <div class="step">
+                    <div class="circle">3</div>
+                    <p>Submit</p>
+                </div>
+                <div class="step">
+                    <div class="circle">4</div>
+                    <p>Get Results</p>
+                </div>
+            </div>
+            <form class="input-box-container" method = "post" enctype="multipart/form-data" onsubmit="saveInput()">
+                <div class="input-box">
+                    <label for="omrImage">Upload OMR Image</label>
+                    <input type="file" id="omrImage" name ="file" accept="image/*">
+                </div>
+                <div class="input-box">
+                    <label for="omrText">Enter Correct Answers</label>
+                    <input type="text" id="omrText" name="question" placeholder="Enter text here" oninput="updateCount()">
+                    <p id="charCount">Answers count: 0</p>
+                </div>
+                <input class="submit-button" type="submit" value="Upload">
+                <div class="vertical-omr right-omr">
+                    <span class="list-item" id="O">O</span>
+                    <span class="list-item" id="M">M</span>
+                    <span class="list-item" id="R">R</span>
+                </div>
+            </form>
+            <section class="content-section">
+                <p>Our AI-powered OMR checker ensures quick and accurate results, saving you time and effort.</p>
+                <p>Simply upload your OMR sheet and let our smart algorithm do the rest.</p>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>OMR Sheet Evaluator by Your Name</p>
+    </footer>
+</body>
+</html>

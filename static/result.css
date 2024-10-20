@@ -1,0 +1,183 @@
+/* styles.css */
+body {
+    background-color: #000033; /* Dark Blue/Black */
+    color: #FFFFFF; /* White */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('back.png'); /* Background image */
+    background-size: cover;
+}
+
+header {
+    background-color: #000033; /* Dark Blue/Black */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #FFFFFF; /* White */
+    font-size: 2.5rem;
+    border-bottom: 2px solid #FFA500; /* Orange underline */
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+#images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#images img {
+    width: 100%;
+    max-width: 250px; /* Adjust as needed */
+    height: initial;
+    border-radius: 8px;
+}
+
+.marks-box, .wrong-answers-box {
+    background-color: #1a1a1a; /* Darker shade for boxes */
+    border-radius: 8px;
+    margin: 10px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    color: #FFFFFF; /* White */
+}
+
+.marks-box .marks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.marks-box .marks .slash {
+    font-size: 2rem;
+    color: #FFA500; /* Orange */
+}
+
+.marks-box .marks .total-marks,
+.marks-box .marks .obtained-marks {
+    font-size: 1.5rem;
+}
+
+.wrong-answers-box h2 {
+    margin-top: 0;
+    color: #FFA500; /* Orange */
+}
+
+.wrong-answers {
+    max-height: 200px; /* Adjust as needed */
+    overflow-y: auto;
+    padding-right: 10px; /* For scrollbar space */
+}
+
+button.login-button {
+    background-color: #FFA500; /* Orange */
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF; /* White */
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button.login-button:hover {
+    background-color: #e69500;
+}
+
+footer {
+    background-color: #000033; /* Dark Blue/Black */
+    color: #D3D3D3; /* Light Gray */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@media (max-width: 1200px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .marks-box .marks .slash {
+        font-size: 1.5rem;
+    }
+
+    .marks-box .marks .total-marks,
+    .marks-box .marks .obtained-marks {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    .marks-box .marks .slash {
+        font-size: 1.25rem;
+    }
+
+    .marks-box .marks .total-marks,
+    .marks-box .marks .obtained-marks {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .marks-box .marks .slash {
+        font-size: 1rem;
+    }
+
+    .marks-box .marks .total-marks,
+    .marks-box .marks .obtained-marks {
+        font-size: 0.875rem;
+    }
+
+    .marks-box,
+    .wrong-answers-box {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    .marks-box .marks .slash {
+        font-size: 0.875rem;
+    }
+
+    .marks-box .marks .total-marks,
+    .marks-box .marks .obtained-marks {
+        font-size: 0.75rem;
+    }
+
+    .marks-box,
+    .wrong-answers-box {
+        width: 95%;
+    }
+}

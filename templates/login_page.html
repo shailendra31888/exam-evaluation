@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Exam Evaluation</title>
+    <link rel="stylesheet" href="/static/login_page.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Evaluation by AI</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="#">ANS EALUTION</a></li>
+                    <li><a href="#">UPLOAD OMR</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>AI-Based <br><span>Evaluation</span> <br>System</h1>
+            <p class="par">Efficient and accurate evaluation <br> using advanced AI techniques.<br> Upload your
+                documents and get instant results.</p>
+
+            <button class="cn" id="fireworks-btn"><a href="#">WELCOME</a></button>
+            <div id="fireworks-container">
+                <div id="welcome-text"></div> <!-- Welcome text container -->
+            </div>
+            <div class="wrapper">
+                <form class="form-login" action="{{ url_for('login') }}" method="POST">
+                    <h2>Login Here</h2>
+                    <input type="email" name="email" placeholder="Enter Email">
+                    <input type="password" name="password" placeholder="Enter Password">
+                    <button type="submit" class="btnn">Login</button>
+
+                    <p class="link">Don't have an account?<br>
+                        <a href="#" class="register-link">Sign up here</a>
+                    </p>
+                    <p class="liw">Log in with</p>
+
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>
+                </form>
+
+                <form class="form-register" action="{{ url_for('register') }}" method="post">
+                    <h2>Login Here</h2>
+                    <input type="text" , name="name" placeholder="Enter Username">
+                    <input type="email" name="email" placeholder="Enter Email">
+                    <input type="password" name="password" placeholder="Create Password">
+                    <button class="btnn" type="submit"><a href="#">Register</a></button>
+
+                    <p class="link">Don't have an account?<br>
+                        <a href="#" class="login-link">Login here</a>
+                    </p>
+                    <p class="liw">Log in with</p>
+
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>
+                </form>
+            </div>
+            <div class="flash-container">
+                {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% if messages %}
+                        <div class="flash-messages">
+                            {% for category, message in messages %}
+                                <div class="flash {{ category }}">{{ message }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="/static/fireworks.js"></script> <!-- Add this line -->
+</body>
+
+</html>

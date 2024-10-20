@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Confirmation Page</title>
+    <link rel="stylesheet" href="static\display.css">
+    <script>
+        function validateForm() {
+            var checkbox = document.getElementById("terms-checkbox");
+            if (!checkbox.checked) {
+                alert("Please confirm that you have reviewed and verified all the images.");
+                return false;  // Prevent form submission
+            }
+            return true;  // Allow form submission
+        }
+    </script>
+</head>
+
+<body>
+    <form method="POST" action="{{ url_for('final_evaluation') }}" onsubmit="return validateForm()">
+        <input type="hidden" name="eval_ans" value="{{ eval_ans }}">
+        <input type="hidden" name="eval_roll" value="{{ eval_roll }}">
+        <div class="container">
+            <h2>Detected Roll:</h2>
+            <h2>{{ ' '.join(eval_roll) }}</h2>
+            <div class="image-row">
+                {% for image in images %}
+                <img src="{{ url_for('get_image', filename=image) }}" alt="{{ image }}" style="width:200px;">
+                {% endfor %}
+            </div>
+            <div class="terms">
+                <input type="checkbox" id="terms-checkbox">
+                <label for="terms-checkbox">I confirm that I have reviewed and verified all the above images.</label>
+            </div>
+            <button type="submit" class="confirm-btn">Confirm</button>
+        </div>
+    </form>
+</body>
+
+</html>

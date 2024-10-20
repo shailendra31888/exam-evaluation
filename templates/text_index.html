@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Based Evaluation System</title>
+    <link rel="stylesheet" href="/static/text_index.css">
+</head>
+<body>
+    <header>
+        <div class="title">
+            <span class="block"></span>
+            <h1>AI-Evaluator<span></span></h1>
+        </div>
+    </header>
+    <div class="container">
+        <div class="box">
+            <div class="role">
+                <div class="block"></div>
+                <h2>AnswerAnalyzer</h2>
+            </div>
+        </div>
+        <form class="input-section" method="post" action="{{ url_for('predict') }}" enctype="multipart/form-data">
+            <label for="text-input">Enter the Question:</label>
+            <input type="text" id="text-input" name="question">
+            
+            <label for="image-input">Image Input:</label>
+            <input type="file" id="image-input" name="file">
+            
+            <input type="submit" value="Submit" class="button">
+        </form>
+        <div class="answer-section">
+            <h2>AI Response</h2>
+            {% if prediction_text %}
+                <h2>Extracted Text:</h2>
+                <p>{{ prediction_text }}</p>
+                <br>
+                <h2>Evaluated Marks:</h2>
+                <p>{{ evaluated_marks }}</p>
+            {% endif %}
+        </div>
+    </div>
+    <footer>
+        <div class="texto">
+            <span>Footer Content Here</span>
+        </div>
+    </footer>
+</body>
+</html>

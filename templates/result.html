@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMR Sheet Evaluator</title>
+    <link rel="stylesheet" href="/static/result.css">
+</head>
+<body>
+    <header>
+        <h1>Result</h1>
+    </header>
+    <main>
+        <section id="results">
+            <div class="marks-box">
+                <div class="marks">
+                    <span id="marks_written">Marks</span>
+                    <span class="slash">=</span>
+                    <span class="total-marks">{{ total_marks }}</span>
+                    <span class="obtained-marks"></span>
+                </div>
+            </div>
+            <div class="wrong-answers-box">
+                <h2>Wrong Answers</h2>
+                <div class="wrong-answers">
+                    <p>{{ wrong_answer|safe }}</p>
+                </div>
+            </div>
+        </section>
+        <form action="{{ url_for('upload_file') }}"></form>
+        <a href="{{ url_for('upload_file') }}"><button class="login-button">Check Another</a></button>
+    </main>
+    <footer>
+        <p>Contact us for more information</p>
+    </footer>
+</body>
+</html>

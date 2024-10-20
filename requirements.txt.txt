@@ -1,0 +1,10 @@
+Flask
+python-dotenv
+opencv-python
+Pillow
+ultralytics
+textwrap3
+google-generativeai
+openpyxl
+numpy
+requests

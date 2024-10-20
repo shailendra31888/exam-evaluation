@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body, html {
+    /* overflow: hidden; */
+    background: url('back.png') no-repeat center center fixed; /* Add background image */
+    background-size: cover; /* Cover the entire page */
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    background: #000033;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.title .block {
+    width: 0%;
+    height: 100px; /* Height of the animation line */
+    background: #ff6700; /* Pink line color */
+    position: absolute;
+    animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+}
+
+.title h1 {
+    font-family: 'Poppins';
+    color: #fff;
+    font-size: 64px; /* Increased font size */
+    animation: mainFadeIn 2s forwards;
+    animation-delay: 1.6s;
+    opacity: 0;
+    margin: 0;
+    position: relative;
+}
+
+.title h1 span {
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background: #ff6700; /* Pink color */
+    animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards;
+    animation-delay: 2s;
+    margin-left: 5px;
+    margin-top: -10px;
+    position: absolute;
+    bottom: 13px;
+    right: -12px;
+}
+
+.role {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 20px; /* Space between the title and subheading */
+}
+
+.role .block {
+    width: 0%;
+    height: 80px; /* Height of the pink animation line */
+    /* background: #e91e63; */
+    background: hsl(327, 100%, 50%);
+    position: unset ;
+    animation: secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
+    animation-delay: 2s;
+}
+
+.role h2 {
+    font-family: 'Poppins';
+    color: #fff;
+    font-size: 32px; /* Increased font size */
+    margin-top: -70px; /* Space below the main heading */
+    position: relative;
+    animation: subtitleFadeIn 2s forwards;
+    animation-delay: 3.5s;
+    opacity: 0;
+}
+
+/* Input and Button Styles */
+.input-section, .answer-section {
+    background-color: #000033;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.input-section {
+    margin-bottom: 30px;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.input-section textarea, 
+.input-section input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+}
+
+.input-section input[type="file"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+}
+
+.input-section .button {
+    background-color: #ff6700;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(255, 105, 0, 0.7); /* Glow effect */
+}
+
+.input-section .button:hover {
+    background-color: #e55a00;
+    box-shadow: 0 4px 12px rgba(255, 105, 0, 0.9); /* Increased glow effect on hover */
+}
+
+.answer-section h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+
+.answer-section {
+    box-shadow: 0 4px 8px rgba(255, 105, 0, 0.7); /* Glow effect */
+}
+
+footer {
+    margin-top: 30px;
+    color: #b0b0b0;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer .texto {
+    margin-bottom: 10px;
+}
+
+footer .texto span {
+    color: #ff6700;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+footer .texto span i {
+    margin-right: 5px;
+}
+
+/* Keyframes for animations */
+@keyframes mainBlock {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes secBlock {
+    0% {
+        width: 0%;
+        left: 0;
+    }
+    50% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes mainFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes subtitleFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        width: 0px;
+        height: 0px;
+        background: #e9d856;
+        border: 0px solid #ddd;
+        opacity: 0;
+    }
+    50% {
+        width: 10px;
+        height: 10px;
+        background: #e9d856;
+        opacity: 1;
+        bottom: 45px;
+    }
+    65% {
+        width: 7px;
+        height: 7px;
+        bottom: 0px;
+        width: 15px;
+    }
+    80% {
+        width: 10px;
+        height: 10px;
+        bottom: 20px;
+    }
+    100% {
+        width: 7px;
+        height: 7px;
+        background: #e9d856;
+        border: 0px solid #222;
+        bottom: 13px;
+    }
+}
+/* Mobile Devices */
+@media (max-width: 767px) {
+    .title h1 {
+        font-size: 48px; /* Smaller font size for smaller screens */
+    }
+
+    .title h1 span {
+        width: 5px;
+        height: 5px;
+        margin-left: 3px;
+        margin-top: -5px;
+    }
+
+    .role h2 {
+        font-size: 24px; /* Smaller font size for smaller screens */
+        margin-top: -60px; /* Adjusted margin */
+    }
+
+    .input-section, .answer-section {
+        padding: 15px;
+    }
+
+    .input-section textarea, 
+    .input-section input[type="text"], 
+    .input-section input[type="file"] {
+        width: calc(100% - 18px);
+    }
+
+    .input-section button {
+        font-size: 16px; /* Smaller font size for smaller screens */
+        padding: 8px 16px;
+    }
+
+    footer {
+        font-size: 12px; /* Smaller font size for smaller screens */
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .title h1 {
+        font-size: 56px; /* Adjust font size for tablets */
+    }
+
+    .title h1 span {
+        width: 7px;
+        height: 7px;
+        margin-left: 4px;
+        margin-top: -7px;
+    }
+
+    .role h2 {
+        font-size: 28px; /* Adjust font size for tablets */
+        margin-top: -85px; /* Adjusted margin */
+    }
+
+    .input-section, .answer-section {
+        padding: 18px;
+    }
+
+    .input-section textarea, 
+    .input-section input[type="text"], 
+    .input-section input[type="file"] {
+        width: calc(100% - 20px);
+    }
+
+    .input-section button {
+        font-size: 17px; /* Adjust button font size */
+        padding: 9px 18px;
+    }
+
+    footer {
+        font-size: 13px; /* Adjust footer font size */
+    }
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+    .input-section, .answer-section {
+        max-width: 700px; /* Larger max-width for desktops */
+    }
+}

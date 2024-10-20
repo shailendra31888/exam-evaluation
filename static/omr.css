@@ -1,0 +1,325 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #1a1a2e; /* Dark Blue/Black */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('back.png'); /* Background image */
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+    animation: backgroundAnimation 20s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Header styles */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #1a1a2e; /* Dark Blue/Black */
+    color: white;
+    z-index: 20;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem; /* Increased height */
+}
+
+.nav-heading {
+    color: #ff6e42; /* Orange for heading */
+    font-size: 2.5rem; /* Increased font size for better visibility */
+    margin: 0;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem; /* Increased font size for better visibility */
+}
+
+.nav-list li a:hover {
+    color: #ff6e42; /* Orange */
+}
+
+/* Vertical text container styles */
+.vertical-text-container {
+    position: absolute;
+    top: 80px; /* Adjust this value as needed to position between navbar and input box */
+    left: 20px; /* Adjust this value as needed for horizontal positioning */
+    transform: translateY(0); /* Adjust this to fine-tune vertical positioning */
+    z-index: 15;
+}
+
+.vertical-text {
+    display: inline-block;
+    transform: rotate(-90deg);
+    font-size: 3rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #ff6e42; /* Orange color */
+}
+
+/* Main content styles */
+.content {
+    margin-top: 200px; /* Adjusted for taller header */
+    width: 80%;
+    max-width: 1200px;
+    position: relative; /* Ensure positioning of child elements */
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px auto;
+    flex-wrap: wrap; /* Added for responsiveness */
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px; /* Added for spacing */
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ff6e42; /* Orange for circles */
+    color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    animation: float 3s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Side decoration styles */
+.side-decor {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 204, 0, 0.1); /* Light yellow for side decor */
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.left-side {
+    left: -50px;
+}
+
+.right-side {
+    right: -50px;
+}
+
+/* Input box container styles */
+.input-box-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* Light yellow shadow */
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-box label {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ff6e42; /* Orange border */
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #1a1a2e; /* Dark Blue/Black text color */
+}
+
+.submit-button {
+    background-color: #ff6e42; /* Orange button */
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 0; /* Square shape */
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #ff5712; /* Darker orange on hover */
+}
+
+/* Content section styles */
+.content-section {
+    margin-top: 20px;
+}
+
+.footer {
+    background-color: #1a1a2e; /* Dark Blue/Black */
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-heading {
+        font-size: 2rem;
+    }
+
+    .nav-list li a {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .vertical-text-container {
+        top: 100px;
+        left: 10px;
+        font-size: 2rem;
+    }
+
+    .input-box-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-heading {
+        font-size: 1.8rem;
+    }
+
+    .nav-list li a {
+        font-size: 1rem;
+    }
+
+    .vertical-text {
+        font-size: 2rem;
+    }
+
+    .input-box-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-heading {
+        font-size: 1.5rem;
+    }
+
+    .nav-list li a {
+        font-size: 0.9rem;
+    }
+
+    .vertical-text-container {
+        top: 120px;
+        left: 5px;
+    }
+
+    .vertical-text {
+        font-size: 1.5rem;
+    }
+
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .circle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+
+    .input-box-container {
+        width: 100%;
+    }
+
+    .submit-button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
